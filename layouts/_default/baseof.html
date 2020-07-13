@@ -30,6 +30,10 @@
       </div>
       {{ end }}
 
+      {{ with $side.content.logo }}
+        {{ partial "logo" . }}
+      {{ end }}
+
     </div>
 
     {{ $side := .Site.Params.right }}
@@ -43,7 +47,7 @@
       <!-- Video -->
       {{ else if eq $side.media.type "video" }}
 
-        {{ partial "video" (dict "context" . "side" $side) }} <!-- TODO Context-Nr. 1 -->
+        {{ partial "video" (dict "context" . "side" $side) }}
 
       {{ end }}
 
@@ -53,6 +57,10 @@
       </div>
       {{ end }}
 
+      {{ with $side.content.logo }}
+        {{ partial "logo" . }}
+      {{ end }}
+    
     </div>
 
   </div>

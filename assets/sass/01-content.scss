@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------------
 
 // Colors
-$color-background : #2b735b;
+$color-background : #0a0a0a;// #2b735b;
 $color-text       : #80ffe8;
 $color-link       : #80ffe8;
 $color-link-hover : #ff5200;//#CA486d;
@@ -140,16 +140,30 @@ body.page-template-page-fullsingle-split {
 // Description
 //-------------------------------------------------------------------------------
 .split-logo {
-
+  width: 20%;
+  @media (max-width: $bp-tablet ) {
+    width: 60%;
+  }
 }
 
 .split-left > .split-logo {
   left: 20px;
-  bottom: 40px;
+  bottom: 30px;
+  @media (max-width: $bp-tablet ) {
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 .split-right > .split-logo {
-
+  right: 20px;
+  top: 30px;
+  @media (max-width: $bp-tablet ) {
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 //-------------------------------------------------------------------------------
