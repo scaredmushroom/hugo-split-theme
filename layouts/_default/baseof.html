@@ -9,19 +9,23 @@
 
   <div class="fs-split">
 
-    <!-- Image -->
+<!--    <!-- Image --/>
     {{ if .Site.Params.visual.image.enable }}
 
       <div class="split-image">
 
       </div>
 
-    <!-- Video -->
+    <!-- Video --/>
     {{ else if .Site.Params.visual.video.enable }}
 
       {{ partial "video" . }}
 
     {{ end }}
+-->
+    <div class="split-content">
+
+    </div>
 
     <!-- Content Side -->
     <div class="split-content">
