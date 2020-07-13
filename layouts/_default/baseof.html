@@ -9,39 +9,50 @@
 
   <div class="fs-split">
 
-<!--    <!-- Image --/>
-    {{ if .Site.Params.visual.image.enable }}
+    {{ $side := .Site.Params.left }}
+    <div class="split-content split-left">
+    
+      <!-- Image -->
+      {{ if eq $side.media.type "image" }}
 
-      <div class="split-image">
+        <div class="split-slice"></div>
 
+      <!-- Video -->
+      {{ else if eq $side.media.type "video" }}
+
+        {{ partial "video" (dict "context" . "side" $side) }} <!-- TODO Context-Nr. 1: make $side usable in partials without this mess -->
+
+      {{ end }}
+
+      {{ with $side.content.description }}
+      <div class="split-description">
+        {{ . }}
       </div>
-
-    <!-- Video --/>
-    {{ else if .Site.Params.visual.video.enable }}
-
-      {{ partial "video" . }}
-
-    {{ end }}
--->
-    <div class="split-content">
+      {{ end }}
 
     </div>
 
-    <!-- Content Side -->
-    <div class="split-content">
-      <div class="split-content-vertically-center">
-        <!-- Intro -->
-        {{ partial "intro" . }}
+    {{ $side := .Site.Params.right }}
+    <div class="split-content split-right">
+    
+      <!-- Image -->
+      {{ if eq $side.media.type "image" }}
 
-        <!-- Main -->
-        {{ block "main" .  }}
-          <!-- Bio -->
-          {{ partial "bio" . }}
-        {{ end }}
+        <div class="split-slice"></div>
 
-        <!-- Footer -->
-        {{ partial "footer" . }}
+      <!-- Video -->
+      {{ else if eq $side.media.type "video" }}
+
+        {{ partial "video" (dict "context" . "side" $side) }} <!-- TODO Context-Nr. 1 -->
+
+      {{ end }}
+
+      {{ with $side.description }}
+      <div class="split-description">
+        {{ . }}
       </div>
+      {{ end }}
+
     </div>
 
   </div>

@@ -80,7 +80,7 @@ body.page-template-page-fullsingle-split {
   // Column - Big Image
   //-------------------------------------------------------------------------------
 
-  .split-image {
+  .SOFTREMOVEsplit-slice {
     width: 50%;
     height: 100vh;
     // background-image: $image-background;
@@ -102,9 +102,7 @@ body.page-template-page-fullsingle-split {
     width: 50%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-      justify-content: center;
-      overflow: auto;
+    overflow: auto;
 
     @media (max-width: $bp-tablet ) {
       width: 100%;
@@ -132,8 +130,27 @@ body.page-template-page-fullsingle-split {
 }
 
 //-------------------------------------------------------------------------------
-// Content
+// Stacking divs
 //-------------------------------------------------------------------------------
+.split-content > * {
+  position: absolute;
+}
+
+//-------------------------------------------------------------------------------
+// Description
+//-------------------------------------------------------------------------------
+.split-logo {
+
+}
+
+.split-left > .split-logo {
+  left: 20px;
+  bottom: 40px;
+}
+
+.split-right > .split-logo {
+
+}
 
 //-------------------------------------------------------------------------------
 // Intro Text
@@ -159,6 +176,17 @@ body.page-template-page-fullsingle-split {
     color: $color-tagline;
   }
 
+}
+
+//-------------------------------------------------------------------------------
+// Socicons
+//-------------------------------------------------------------------------------
+.split-social {
+  position: relative;
+  top: 0;
+  width: 50%;
+  height:100vh;
+  z-index: -1%
 }
 
 //-------------------------------------------------------------------------------
